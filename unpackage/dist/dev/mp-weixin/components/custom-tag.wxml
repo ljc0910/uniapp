@@ -1,0 +1,1 @@
+<view class="custom-tag data-v-5ad8e7b9" style="{{(getStyle)}}"><slot></slot></view>

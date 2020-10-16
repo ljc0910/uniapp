@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.home-tab-tpl .van-tabs__wrap {
+  padding: 0 40rpx;
+}
+.home-tab-tpl .home-nav {
+  width: 500rpx;
+  padding: 0;
+}
+.home-tab-tpl .home-tab {
+  font-size: 32rpx;
+  color: #333333;
+  text-align: left;
+  padding-left: 0;
+  padding-right: 62rpx;
+}
+.home-tab-tpl .home-tab-active {
+  font-size: 36rpx;
+  font-weight: bold;
+  position: relative;
+}
+.home-tab-tpl .home-tab-active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  background: url(data:image/png;base64,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);
+  background-size: cover;
+  right: 50rpx;
+  top: 38rpx;
+  z-index: 1;
+  opacity: 0.7;
+}
+.home-tab-tpl .tab-filter {
+  color: red;
+  background: #fff;
+  width: 126rpx;
+  line-height: 88rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  font-size: 32rpx;
+  color: #333333;
+}
+.home-tab-tpl .tab-filter ._img {
+  width: 28rpx;
+  height: 28rpx;
+}
+

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "home": "/pages/index/home/home",
+    "my-info": "/pages/index/myInfo/myInfo",
+    "message": "/pages/index/message/message",
+    "release": "/pages/index/release/release"
+  }
+}

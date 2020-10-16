@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "home-tab": "/pages/index/home/homeTab/homeTab"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "发布宠物走失",
+  "usingComponents": {
+    "custom-select": "/components/custom-select"
+  }
+}

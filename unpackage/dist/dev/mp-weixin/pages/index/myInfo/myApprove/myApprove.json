@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "待认证",
+  "usingComponents": {
+    "approve-item": "/pages/index/myInfo/myApprove/approveItem/approveItem"
+  }
+}

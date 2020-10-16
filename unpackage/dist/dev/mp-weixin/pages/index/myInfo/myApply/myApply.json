@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的领养申请",
+  "usingComponents": {
+    "apply-item": "/pages/index/myInfo/myApply/applyItem/applyItem"
+  }
+}

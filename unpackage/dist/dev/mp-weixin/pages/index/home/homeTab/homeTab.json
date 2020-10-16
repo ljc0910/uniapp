@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "home-radio": "/pages/index/home/homeTab/homeRadio/homeRadio",
+    "home-item": "/pages/index/home/homeTab/homeItem/homeItem"
+  }
+}
