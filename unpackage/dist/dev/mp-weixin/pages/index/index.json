@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "首页",
+  "enablePullDownRefresh": true,
   "usingComponents": {
     "home": "/pages/index/home/home",
     "my-info": "/pages/index/myInfo/myInfo",

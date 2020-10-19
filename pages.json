@@ -3,7 +3,8 @@
     {
       "path": "pages/index/index",
       "style": {
-        "navigationBarTitleText": "首页"
+        "navigationBarTitleText": "首页",
+        "enablePullDownRefresh":true //开启下拉刷新
       }
     },
     {
@@ -77,6 +78,11 @@
       "style": {
         "navigationBarTitleText": "关于我们"
       }
+    },{
+      "path": "pages/webView/webView",
+      "style": {
+        "navigationBarTitleText": "webView"
+      }
     }
   ],
   "globalStyle": {
@@ -109,7 +115,8 @@
       "van-checkbox-group": "/wxcomponents/vant/dist/checkbox-group/index",
       "van-uploader": "/wxcomponents/vant/dist/uploader/index",
       "van-nav-bar": "/wxcomponents/vant/dist/nav-bar/index",
-      "van-dialog": "/wxcomponents/vant/dist/dialog/index"
+      "van-dialog": "/wxcomponents/vant/dist/dialog/index",
+      "van-toast": "/wxcomponents/vant/dist/toast/index"
     }
   }
 }

@@ -25,7 +25,9 @@
       <van-tab title="全部">
         <homeItem v-for="i in 15" :key="i"></homeItem>
       </van-tab>
-      <van-tab title="标签 2">内容 2</van-tab>
+      <van-tab title="标签 2">
+        <aLoadMore  mode="" color="" textColor="" textSize="" padding=""></aLoadMore>
+      </van-tab>
       <van-tab title="标签 3">内容 3</van-tab>
       <van-tab title="标签 4">内容 4</van-tab>
       <van-tab title="标签 5">内容 5</van-tab>
@@ -69,9 +71,7 @@ export default {
 </script>
 <style lang="scss">
 .home-tab-tpl {
-  .van-tabs__wrap {
-    padding: 0 40rpx;
-  }
+  padding: 0 40rpx 100rpx;
   .home-nav {
     width: 500rpx;
     padding: 0;

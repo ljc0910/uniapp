@@ -24,8 +24,8 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.home-tab-tpl .van-tabs__wrap {
-  padding: 0 40rpx;
+.home-tab-tpl {
+  padding: 0 40rpx 100rpx;
 }
 .home-tab-tpl .home-nav {
   width: 500rpx;

@@ -45,7 +45,6 @@ export default {
 </script>
 <style lang="scss">
 .home-item {
-  padding: 0 40rpx;
   display: flex;
   align-items: center;
   margin: 30rpx 0;

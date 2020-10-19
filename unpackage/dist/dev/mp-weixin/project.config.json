@@ -49,56 +49,13 @@
       "current": -1,
       "list": []
     },
-    "plugin": {
-      "current": -1,
-      "list": []
-    },
     "game": {
-      "current": -1,
-      "list": []
-    },
-    "gamePlugin": {
       "current": -1,
       "list": []
     },
     "miniprogram": {
       "current": -1,
-      "list": [
-        {
-          "id": -1,
-          "name": "pages/index/home/homeDetail/sharePage/sharePage",
-          "pathName": "pages/index/home/homeDetail/sharePage/sharePage",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/index/myInfo/editMyInfo/editMyInfo",
-          "pathName": "pages/index/myInfo/editMyInfo/editMyInfo",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/index/myInfo/myAdopt/myAdopt",
-          "pathName": "pages/index/myInfo/myAdopt/myAdopt",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/index/myInfo/myRelease/myRelease",
-          "pathName": "pages/index/myInfo/myRelease/myRelease",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/index/myInfo/myApprove/myApprove",
-          "pathName": "pages/index/myInfo/myApprove/myApprove",
-          "scene": null
-        }
-      ]
+      "list": []
     }
   }
 }

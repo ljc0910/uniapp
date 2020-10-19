@@ -1,11 +1,6 @@
 <template>
-  <view class="message">
-    <van-cell
-      clickable
-      link-type="navigateTo"
-      url="/pages/dashboard/index"
-      :border="false"
-    >
+  <view :class="{ showCover: showCover, message: true }">
+    <van-cell :border="false">
       <view slot="title" class="cell-item">
         <img class="head-img" src="http://iph.href.lu/100x100" />
         <view class="message-cont">
@@ -32,7 +27,7 @@
               <van-button
                 custom-style="width:128rpx;height:56rpx;background:#6387FE;font-size:24rpx;padding:0;color:#fff;border-radius:8rpx;"
                 type="default"
-                @click="adoptHandle"
+                @click.stop="adoptHandle"
                 >同意领养</van-button
               >
             </view>
@@ -67,6 +62,7 @@
               <van-button
                 custom-style="width:128rpx;height:56rpx;background:#6387FE;font-size:24rpx;padding:0;color:#fff;border-radius:8rpx;"
                 type="default"
+                @click.stop="adoptHandle"
                 >同意领养</van-button
               >
             </view>
@@ -78,15 +74,16 @@
 </template>
 <script>
 export default {
+  props: {
+    showCover: Boolean
+  },
   data() {
     return {
       isSystem: true
     };
   },
   methods: {
-    adoptHandle(e) {
-      e.stopPropagation(); //非IE浏览器
-    }
+    adoptHandle() {}
   }
 };
 </script>

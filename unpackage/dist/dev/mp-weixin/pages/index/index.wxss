@@ -25,7 +25,6 @@
 /* 透明度 */
 /* 文章场景相关 */
 .index.data-v-57280228 {
-  padding-bottom: 100rpx;
   height: 100vh;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

@@ -276,4 +276,9 @@ custom-tag {
     margin-left: -4rpx;
   }
 }
+
+// 蒙层
+.showCover {
+  filter: blur(4px);
+}
 </style>

@@ -1,7 +1,7 @@
 <template>
   <view class="sharePage">
     <view>
-      <img class="bg" src="../../../../../static/img/sharebg.png" />
+      <!-- <img class="bg" src="../../../../../static/img/sharebg.png" /> -->
       <van-nav-bar
         title="帮ta找家"
         left-arrow

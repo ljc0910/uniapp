@@ -1,5 +1,5 @@
 <template>
-  <view class="home-wraper">
+  <view :class="{ showCover: showCover, 'home-wraper': true }">
     <view class="home-cont">
       <view class="swiper-area">
         <swiper
@@ -82,6 +82,9 @@ export default {
   components: {
     homeTab
   },
+  props: {
+    showCover: Boolean
+  },
   data() {
     return {
       swiperList: 5,
@@ -98,6 +101,7 @@ export default {
     };
   },
   onLoad() {
+    console.log("onload");
     // uni.login({
     //   provider: "weixin",
     //   success: function(loginRes) {
@@ -119,6 +123,20 @@ export default {
     // });
   },
   methods: {
+    testFN() {
+      this.$api.get("test").then(res => {
+        console.log(res);
+      });
+    },
+    pullRefresh() {
+      console.log("下拉刷新,home");
+      setTimeout(() => {
+        uni.stopPullDownRefresh();
+      }, 1000);
+    },
+    loadMore() {
+      console.log("上拉加载,home");
+    },
     currentChange(event) {
       this.current = event.detail.current;
     },

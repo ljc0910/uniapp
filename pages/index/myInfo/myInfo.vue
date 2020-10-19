@@ -1,5 +1,5 @@
 <template>
-  <view class="myInfo">
+  <view :class="{ showCover: showCover, myInfo: true }">
     <view class="personal custom-card">
       <img class="head-img" src="http://iph.href.lu/300x200?text=qrcode" />
       <view class="user-info">
@@ -82,6 +82,9 @@
 <script>
 import Dialog from "@/wxcomponents/vant/dist/dialog/dialog";
 export default {
+  props: {
+    showCover: Boolean
+  },
   data() {
     return {};
   },

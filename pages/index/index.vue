@@ -1,17 +1,30 @@
 <template>
   <view class="index">
     <!-- 各个页面入口 -->
-    <home v-show="active === 0"></home>
-    <release v-show="active === 1"></release>
-    <message v-show="active === 2"></message>
-    <myInfo v-show="active === 3"></myInfo>
+    <home ref="home" v-show="active === 0" :showCover="showCover"></home>
+    <!-- 发布页蒙层 -->
+    <release
+      ref="release"
+      v-if="showCover"
+      @close="showCover = false"
+    ></release>
+    <message
+      ref="message"
+      v-show="active === 2"
+      :showCover="showCover"
+    ></message>
+    <myInfo ref="myInfo" v-show="active === 3" :showCover="showCover"></myInfo>
+    <!-- 登陆 -->
+    <van-dialog id="van-dialog" />
     <!-- tabbar 模拟 -->
-    <van-tabbar :active="active" @change="onChange">
-      <van-tabbar-item icon="home-o">首页</van-tabbar-item>
-      <van-tabbar-item icon="search" dot>发布</van-tabbar-item>
-      <van-tabbar-item icon="friends-o" info="5">消息</van-tabbar-item>
-      <van-tabbar-item icon="setting-o" info="20">我的</van-tabbar-item>
-    </van-tabbar>
+    <view :class="{ showCover: showCover }">
+      <van-tabbar :active="active" @change="onChange">
+        <van-tabbar-item icon="home-o">首页</van-tabbar-item>
+        <van-tabbar-item icon="search" dot>发布</van-tabbar-item>
+        <van-tabbar-item icon="friends-o" info="5">消息</van-tabbar-item>
+        <van-tabbar-item icon="setting-o" info="20">我的</van-tabbar-item>
+      </van-tabbar>
+    </view>
   </view>
 </template>
 <script>
@@ -19,6 +32,8 @@ import home from "./home/home";
 import message from "./message/message";
 import myInfo from "./myInfo/myInfo";
 import release from "./release/release";
+import Dialog from "@/wxcomponents/vant/dist/dialog/dialog";
+import { mapState } from "vuex";
 export default {
   components: {
     home,
@@ -42,27 +57,47 @@ export default {
         {
           title: "我的"
         }
-      ]
+      ],
+      showCover: false
     };
   },
+  computed: {
+    // ...mapState(['username']),
+  },
+  // 下拉刷新
+  onPullDownRefresh() {
+    this.$refs.home.pullRefresh();
+  },
+  // 上拉加载
+  onReachBottom() {
+    this.$refs.home.loadMore();
+  },
   mounted() {
+    this.$store.commit("favorites", "fffss");
     this.$nextTick(() => {
       this.active = 0;
     });
+    this.getBanner();
   },
   methods: {
     onChange(event) {
-      this.active = event.detail;
-      uni.setNavigationBarTitle({
-        title: this.list[this.active].title
-      });
+      if (event.detail === 1) {
+        this.showCover = true;
+      } else {
+        this.active = event.detail;
+        uni.setNavigationBarTitle({
+          title: this.list[this.active].title
+        });
+      }
+    },
+    getBanner() {
+      this.$api.indexBanner();
     }
   }
 };
 </script>
 <style lang="scss" scoped>
 .index {
-  padding-bottom: 100rpx;
   height: 100vh;
   box-sizing: border-box;
 }

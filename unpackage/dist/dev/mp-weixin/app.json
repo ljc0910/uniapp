@@ -13,7 +13,8 @@
     "pages/index/myInfo/myApply/myApply",
     "pages/index/myInfo/myFocus/myFocus",
     "pages/index/myInfo/adoptDeal/adoptDeal",
-    "pages/index/myInfo/aboutUs/aboutUs"
+    "pages/index/myInfo/aboutUs/aboutUs",
+    "pages/webView/webView"
   ],
   "subPackages": [],
   "window": {
@@ -48,8 +49,11 @@
     "van-uploader": "/wxcomponents/vant/dist/uploader/index",
     "van-nav-bar": "/wxcomponents/vant/dist/nav-bar/index",
     "van-dialog": "/wxcomponents/vant/dist/dialog/index",
+    "van-toast": "/wxcomponents/vant/dist/toast/index",
     "custom-tag": "/components/custom-tag",
     "custom-tag2": "/components/custom-tag2",
-    "custom-info": "/components/custom-info"
-  }
+    "custom-info": "/components/custom-info",
+    "a-load-more": "/components/a_loadMore"
+  },
+  "sitemapLocation": "sitemap25.json"
 }

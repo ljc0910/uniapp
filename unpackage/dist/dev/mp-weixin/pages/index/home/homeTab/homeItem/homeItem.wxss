@@ -25,7 +25,6 @@
 /* 透明度 */
 /* 文章场景相关 */
 .home-item {
-  padding: 0 40rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;

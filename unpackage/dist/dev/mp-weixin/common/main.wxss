@@ -297,4 +297,8 @@ custom-tag {
   font-size: 28rpx;
   margin-left: -4rpx;
 }
+.showCover {
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+}
 
