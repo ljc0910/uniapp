@@ -2048,7 +2048,6 @@ function (error) {
 service.interceptors.response.use(
 function (res) {
   if (res.data && res.data.status == 200) {
-    loginConfirm();
     return res.data;
   } else {
     if (res.data.status === 700) {
