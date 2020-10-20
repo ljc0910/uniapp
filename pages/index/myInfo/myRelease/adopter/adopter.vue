@@ -3,7 +3,7 @@
     <van-cell
       clickable
       link-type="navigateTo"
-      url="/pages/dashboard/index"
+      url="/pages/index/myInfo/myRelease/adopter/adopterDetail/adopterDetail"
       :border="false"
     >
       <view slot="title" class="cell-item">

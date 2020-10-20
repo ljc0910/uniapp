@@ -54,6 +54,13 @@
         "navigationBarTitleText": "申请人"
       }
     },{
+      "path": "pages/index/myInfo/myRelease/adopter/adopterDetail/adopterDetail",
+      "style": {
+        "navigationBarTitleText": "申请人详情",
+        "navigationStyle":"custom",
+        "navigationBarTextStyle":"white"
+      }
+    },{
       "path": "pages/index/myInfo/myApprove/myApprove",
       "style": {
         "navigationBarTitleText": "待认证"

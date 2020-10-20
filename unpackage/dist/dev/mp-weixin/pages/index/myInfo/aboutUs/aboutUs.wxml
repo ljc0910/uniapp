@@ -1,1 +1,1 @@
-<view>aboutUs</view>
+<view class="aboutUs data-v-cd3f4c70"><view class="name data-v-cd3f4c70">{{aboutUs.name}}</view><view class="value data-v-cd3f4c70">{{aboutUs.value}}</view></view>

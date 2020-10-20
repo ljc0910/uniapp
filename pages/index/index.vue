@@ -18,11 +18,66 @@
     <van-dialog id="van-dialog" />
     <!-- tabbar 模拟 -->
     <view :class="{ showCover: showCover }">
-      <van-tabbar :active="active" @change="onChange">
-        <van-tabbar-item icon="home-o">首页</van-tabbar-item>
-        <van-tabbar-item icon="search" dot>发布</van-tabbar-item>
-        <van-tabbar-item icon="friends-o" info="5">消息</van-tabbar-item>
-        <van-tabbar-item icon="setting-o" info="20">我的</van-tabbar-item>
+      <van-tabbar
+        :active="active"
+        @change="onChange"
+        active-color="#FF7F5F"
+        inactive-color="#ADBCC6"
+      >
+        <van-tabbar-item>
+          <image
+            slot="icon"
+            src="../../static/img/indexTab.png"
+            mode="aspectFit"
+            style="width: 52rpx; height: 38rpx;"
+          />
+          <image
+            slot="icon-active"
+            src="../../static/img/indexOnTab.png"
+            mode="aspectFit"
+            style="width: 52rpx; height: 38rpx;"
+          />
+          首页</van-tabbar-item
+        >
+        <van-tabbar-item>
+          <image
+            slot="icon"
+            src="../../static/img/releaseTab.png"
+            mode="aspectFit"
+            style="width: 52rpx; height: 38rpx;"
+          />
+          发布</van-tabbar-item
+        >
+        <van-tabbar-item info="5">
+          <image
+            slot="icon"
+            src="../../static/img/msgTab.png"
+            mode="aspectFit"
+            style="width: 52rpx; height: 38rpx;"
+          />
+          <image
+            slot="icon-active"
+            src="../../static/img/indexOnTab.png"
+            mode="aspectFit"
+            style="width: 52rpx; height: 38rpx;"
+          />
+          消息</van-tabbar-item
+        >
+        <van-tabbar-item info="20">
+          <image
+            slot="icon"
+            src="../../static/img/myTab.png"
+            mode="aspectFit"
+            style="width: 52rpx; height: 38rpx;"
+          />
+          <image
+            slot="icon-active"
+            src="../../static/img/myOnTab.png"
+            mode="aspectFit"
+            style="width: 52rpx; height: 38rpx;"
+          />
+          我的</van-tabbar-item
+        >
       </van-tabbar>
     </view>
   </view>

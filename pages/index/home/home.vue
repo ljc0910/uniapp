@@ -50,7 +50,7 @@
               alt=""
             />
             <view class="search-area-location" @click="locationHandle">{{
-              curLocation
+              lcationObj.name || "未知"
             }}</view>
             <img
               @click="locationHandle"
@@ -64,7 +64,7 @@
         <van-action-sheet :show="sheetShow">
           <van-area
             :area-list="areajs"
-            value="110101"
+            :value="lcationObj.code"
             @confirm="selectArea"
             @cancel="cancelArea"
           />
@@ -96,7 +96,7 @@ export default {
       sheetShow: false,
       areajs: areajs,
       searchVal: "",
-      curLocation: "未知", //用户的地址
+      curLocation: [], //用户的地址
       searchIsTop: false
     };
   },
@@ -122,12 +122,17 @@ export default {
     //   }
     // });
   },
+  computed: {
+    lcationObj() {
+      return this.curLocation.length > 0
+        ? this.curLocation[this.curLocation.length - 1]
+        : {};
+    }
+  },
+  mounted() {
+    this.getLocation();
+  },
   methods: {
-    testFN() {
-      this.$api.get("test").then(res => {
-        console.log(res);
-      });
-    },
     pullRefresh() {
       console.log("下拉刷新,home");
       setTimeout(() => {
@@ -151,9 +156,24 @@ export default {
     selectArea(param) {
       // console.log(param.target.values);
       const areaInfo = param.target.values;
-      console.log(areaInfo);
-      this.curLocation = areaInfo[areaInfo.length - 1].name;
+      this.curLocation = areaInfo;
       this.sheetShow = false;
+    },
+    // 自动定位
+    getLocation() {
+      uni.getLocation({
+        type: "wgs84",
+        success: res => {
+          this.$api
+            .indexLocation({
+              lng: res.longitude, //经度
+              lat: res.latitude //纬度
+            })
+            .then(cres => {
+              this.curLocation = cres.reverse();
+            });
+        }
+      });
     },
     //取消选择
     cancelArea() {

@@ -281,4 +281,7 @@ custom-tag {
 .showCover {
   filter: blur(4px);
 }
+.van-tabbar-item__text {
+  font-size: 20rpx;
+}
 </style>

@@ -78,7 +78,16 @@ export default {
       selectShow: false
     };
   },
+  mounted() {
+    this.getMyInfo();
+  },
   methods: {
+    //获取个人信息
+    getMyInfo() {
+      this.$api.getMyInfo(1).then(res => {
+        console.log(res);
+      });
+    },
     clickSelelctFn() {
       this.selectShow = true;
     }

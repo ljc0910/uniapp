@@ -6,7 +6,7 @@
         v-for="(item, index) in filterList"
         :key="index"
       >
-        <view class="radio-title">{{ item.title }}</view>
+        <view class="radio-title">{{ item.label }}</view>
         <view class="radio-list">
           <van-radio-group
             style="display:flex;"
@@ -15,17 +15,17 @@
           >
             <van-radio
               use-icon-slot
-              :name="filter.id"
-              v-for="(filter, findex) in item.filters"
+              :name="filter"
+              v-for="(filter, findex) in item.data"
               :key="findex"
             >
               <view
                 slot="icon"
                 :class="{
                   radioItem: true,
-                  isOnRadio: item.value === filter.id
+                  isOnRadio: item.value === filter
                 }"
-                >{{ filter.lable }}</view
+                >{{ filter }}</view
               >
             </van-radio>
           </van-radio-group>
@@ -56,139 +56,29 @@
 export default {
   data() {
     return {
-      filterList: [
-        {
-          title: "信息",
-          value: "",
-          filters: [
-            {
-              lable: "全部",
-              id: 1
-            },
-            {
-              lable: "其他",
-              id: 2
-            }
-          ]
-        },
-        {
-          title: "信息2",
-          value: "",
-          filters: [
-            {
-              lable: "全部",
-              id: 1
-            },
-            {
-              lable: "其他",
-              id: 2
-            }
-          ]
-        },
-        {
-          title: "信息2",
-          value: "",
-          filters: [
-            {
-              lable: "全部",
-              id: 1
-            },
-            {
-              lable: "其他",
-              id: 2
-            }
-          ]
-        },
-        {
-          title: "信息2",
-          value: "",
-          filters: [
-            {
-              lable: "全部",
-              id: 1
-            },
-            {
-              lable: "其他",
-              id: 2
-            }
-          ]
-        },
-        {
-          title: "信息2",
-          value: "",
-          filters: [
-            {
-              lable: "全部",
-              id: 1
-            },
-            {
-              lable: "其他",
-              id: 2
-            }
-          ]
-        },
-        {
-          title: "信息2",
-          value: "",
-          filters: [
-            {
-              lable: "全部",
-              id: 1
-            },
-            {
-              lable: "其他",
-              id: 2
-            }
-          ]
-        },
-        {
-          title: "信息2",
-          value: "",
-          filters: [
-            {
-              lable: "全部",
-              id: 1
-            },
-            {
-              lable: "其他",
-              id: 2
-            }
-          ]
-        },
-        {
-          title: "信息2",
-          value: "",
-          filters: [
-            {
-              lable: "全部",
-              id: 1
-            },
-            {
-              lable: "其他",
-              id: 2
-            }
-          ]
-        },
-        {
-          title: "信息2",
-          value: "",
-          filters: [
-            {
-              lable: "全部",
-              id: 1
-            },
-            {
-              lable: "其他",
-              id: 2
-            }
-          ]
-        }
-      ]
+      filterList: []
     };
   },
+  mounted() {
+    this.getRadioList();
+    this.getList();
+  },
   methods: {
+    //获取筛选框列表
+    getRadioList() {
+      this.$api.indexFilter().then(res => {
+        this.filterList = res;
+        this.filterList[0].data = ["test", "test2", 3];
+      });
+    },
+    // 获取内容列表
+    getList() {
+      this.$api.indexList().then(res => {
+        console.log(res);
+      });
+    },
     onChange(param, item) {
-      item.value = param.detail;
+      this.$set(item, "value", param.detail);
     },
     // 取消
     cancelHandle() {
@@ -197,8 +87,13 @@ export default {
     },
     // 确定操作
     saveHandle() {
-      //to do
-      this.onClose();
+      const param = this.filterList.map(item => {
+        return {
+          id: item.id,
+          value: item.value
+        };
+      });
+      this.$emit("filterCb", param);
     },
     // 关闭popup
     onClose() {

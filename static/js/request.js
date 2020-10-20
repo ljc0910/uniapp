@@ -11,7 +11,7 @@ const service = axios.create({
 const failToast = msg => {
   //错误toast
   uni.showToast({
-    title: msg,
+    title: msg || "网络错误",
     duration: 2000,
     icon: "none"
   });
@@ -75,7 +75,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   res => {
     if (res.data && res.data.status == 200) {
-      return res.data;
+      return res.data.data;
     } else {
       if (res.data.status === 700) {
         // 未登录
@@ -95,7 +95,6 @@ service.interceptors.response.use(
 axios.defaults.adapter = function(config) {
   //自定义适配器，用来适配uniapp的语法
   return new Promise((resolve, reject) => {
-    console.log(config);
     var settle = require("axios/lib/core/settle");
     var buildURL = require("axios/lib/helpers/buildURL");
     uni.request({

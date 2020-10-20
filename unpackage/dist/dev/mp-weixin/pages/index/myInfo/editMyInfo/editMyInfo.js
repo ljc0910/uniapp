@@ -210,7 +210,16 @@ var _default =
       selectShow: false };
 
   },
+  mounted: function mounted() {
+    this.getMyInfo();
+  },
   methods: {
+    //获取个人信息
+    getMyInfo: function getMyInfo() {
+      this.$api.getMyInfo(1).then(function (res) {
+        console.log(res);
+      });
+    },
     clickSelelctFn: function clickSelelctFn() {
       this.selectShow = true;
     } } };exports.default = _default;

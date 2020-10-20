@@ -301,4 +301,7 @@ custom-tag {
   -webkit-filter: blur(4px);
           filter: blur(4px);
 }
+.van-tabbar-item__text {
+  font-size: 20rpx;
+}
 

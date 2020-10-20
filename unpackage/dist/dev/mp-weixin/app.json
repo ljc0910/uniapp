@@ -9,6 +9,7 @@
     "pages/index/myInfo/myAdopt/myAdopt",
     "pages/index/myInfo/myRelease/myRelease",
     "pages/index/myInfo/myRelease/adopter/adopter",
+    "pages/index/myInfo/myRelease/adopter/adopterDetail/adopterDetail",
     "pages/index/myInfo/myApprove/myApprove",
     "pages/index/myInfo/myApply/myApply",
     "pages/index/myInfo/myFocus/myFocus",
@@ -54,6 +55,5 @@
     "custom-tag2": "/components/custom-tag2",
     "custom-info": "/components/custom-info",
     "a-load-more": "/components/a_loadMore"
-  },
-  "sitemapLocation": "sitemap25.json"
+  }
 }

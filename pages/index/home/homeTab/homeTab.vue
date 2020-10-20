@@ -6,7 +6,7 @@
       position="top"
       custom-class="home-popup"
     >
-      <homeRadio @onClose="onClose"></homeRadio>
+      <homeRadio @onClose="onClose" @filterCb="filterCb"></homeRadio>
     </van-popup>
     <van-tabs
       sticky
@@ -14,9 +14,11 @@
       animated
       :ellipsis="false"
       color="#fff"
+      :active="active"
       nav-class="home-nav"
       tab-class="home-tab"
       tab-active-class="home-tab-active"
+      @change="tabChange"
     >
       <view slot="nav-right" class="tab-filter" @click="showFilter">
         <view style="margin-right:6rpx;">筛选</view>
@@ -26,7 +28,13 @@
         <homeItem v-for="i in 15" :key="i"></homeItem>
       </van-tab>
       <van-tab title="标签 2">
-        <aLoadMore  mode="" color="" textColor="" textSize="" padding=""></aLoadMore>
+        <aLoadMore
+          mode=""
+          color=""
+          textColor=""
+          textSize=""
+          padding=""
+        ></aLoadMore>
       </van-tab>
       <van-tab title="标签 3">内容 3</van-tab>
       <van-tab title="标签 4">内容 4</van-tab>
@@ -45,23 +53,32 @@ export default {
   },
   data() {
     return {
-      popupShow: false
+      popupShow: false,
+      active: 0
     };
   },
   methods: {
-    getuserinfo(res) {
-      console.log(res);
-    },
+    // 关闭回调
     onClose() {
       this.popupShow = false;
-      uni.getLocation({
-        type: "wgs84",
-        success: function(res) {
-          console.log(res);
-          console.log("当前位置的经度：" + res.longitude);
-          console.log("当前位置的纬度：" + res.latitude);
-        }
-      });
+      // uni.getLocation({
+      //   type: "wgs84",
+      //   success: function(res) {
+      //     console.log(res);
+      //     console.log("当前位置的经度：" + res.longitude);
+      //     console.log("当前位置的纬度：" + res.latitude);
+      //   }
+      // });
+      console.log(this.active);
+    },
+    // 筛选回调
+    filterCb(param) {
+      console.log(param);
+      this.popupShow = false;
+    },
+    // active切换
+    tabChange(event) {
+      this.active = event.detail.index;
     },
     showFilter() {
       this.popupShow = true;
