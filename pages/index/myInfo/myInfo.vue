@@ -16,7 +16,7 @@
           :border="false"
         />
         <view class="bottom">
-          <custom-tag background="#F7B500FF">申请认证</custom-tag>
+          <uni-tag background="#F7B500FF">申请认证</uni-tag>
           <van-icon
             name="question-o"
             custom-style="font-size:32rpx;color:#7f91a1;margin-left:10rpx;"

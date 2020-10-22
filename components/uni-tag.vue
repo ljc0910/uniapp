@@ -1,10 +1,11 @@
 <template>
-  <view class="custom-tag" :style="getStyle">
+  <view class="uni-tag" :style="getStyle">
     <slot></slot>
   </view>
 </template>
 <script>
 export default {
+  name: "uni-tag",
   props: {
     background: {
       default: "#6387FE"
@@ -19,7 +20,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.custom-tag {
+.uni-tag {
   float: left;
   border-radius: 4rpx;
   padding: 0 8rpx;

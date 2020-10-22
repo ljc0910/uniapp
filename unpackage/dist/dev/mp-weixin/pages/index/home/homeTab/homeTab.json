@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
+    "uni-load-more": "/components/uni-load-more",
     "home-radio": "/pages/index/home/homeTab/homeRadio/homeRadio",
     "home-item": "/pages/index/home/homeTab/homeItem/homeItem"
   }

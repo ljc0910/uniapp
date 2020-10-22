@@ -12,17 +12,14 @@
           @change="currentChange"
         >
           <swiper-item v-for="item in swiperList" :key="item">
-            <img
-              class="swiper-img"
-              :src="`http://iph.href.lu/300x200?text=${item}`"
-            />
+            <img class="swiper-img" :src="item.image" />
           </swiper-item>
         </swiper>
         <!-- 因为 小程序 swiper的指示器修改起来比较困难，这里手写一套 start -->
         <view class="swiper-point">
           <view class="swiper-point-wraper">
             <view
-              v-for="item in swiperList"
+              v-for="item in swiperList.length"
               :key="item"
               :class="{ isOnPoint: item === current, defaultPoint: true }"
             ></view>
@@ -87,7 +84,7 @@ export default {
   },
   data() {
     return {
-      swiperList: 5,
+      swiperList: [],
       autoplay: true,
       interval: 2000,
       duration: 500,
@@ -100,28 +97,6 @@ export default {
       searchIsTop: false
     };
   },
-  onLoad() {
-    console.log("onload");
-    // uni.login({
-    //   provider: "weixin",
-    //   success: function(loginRes) {
-    //     console.log(loginRes);
-    //     // 获取用户信息
-    //     uni.getUserInfo({
-    //       provider: "weixin",
-    //       success: function(infoRes) {
-    //         console.log("用户昵称为：" + infoRes.userInfo.nickName);
-    //       }
-    //     });
-    //   }
-    // });
-    // uni.getUserInfo({
-    //   provider: "weixin",
-    //   success: function(infoRes) {
-    //     console.log(infoRes.userInfo);
-    //   }
-    // });
-  },
   computed: {
     lcationObj() {
       return this.curLocation.length > 0
@@ -131,6 +106,7 @@ export default {
   },
   mounted() {
     this.getLocation();
+    this.getBanner();
   },
   methods: {
     pullRefresh() {
@@ -147,6 +123,12 @@ export default {
     },
     searchValChange(val) {
       console.log(val);
+    },
+    // 获取轮播
+    getBanner() {
+      this.$api.indexBanner().then(res => {
+        this.swiperList = res;
+      });
     },
     // 手动定位
     locationHandle() {

@@ -225,7 +225,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _dialog = _interopRequireDefault(__webpack_require__(/*! @/wxcomponents/vant/dist/dialog/dialog */ 50));
-var _vuex = __webpack_require__(/*! vuex */ 42);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var home = function home() {Promise.all(/*! require.ensure | pages/index/home/home */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/index/home/home")]).then((function () {return resolve(__webpack_require__(/*! ./home/home */ 199));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var message = function message() {__webpack_require__.e(/*! require.ensure | pages/index/message/message */ "pages/index/message/message").then((function () {return resolve(__webpack_require__(/*! ./message/message */ 210));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var myInfo = function myInfo() {Promise.all(/*! require.ensure | pages/index/myInfo/myInfo */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/index/myInfo/myInfo")]).then((function () {return resolve(__webpack_require__(/*! ./myInfo/myInfo */ 217));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var release = function release() {Promise.all(/*! require.ensure | pages/index/release/release */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/index/release/release")]).then((function () {return resolve(__webpack_require__(/*! ./release/release */ 224));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+var _vuex = __webpack_require__(/*! vuex */ 42);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var home = function home() {Promise.all(/*! require.ensure | pages/index/home/home */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/index/home/home")]).then((function () {return resolve(__webpack_require__(/*! ./home/home */ 173));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var message = function message() {__webpack_require__.e(/*! require.ensure | pages/index/message/message */ "pages/index/message/message").then((function () {return resolve(__webpack_require__(/*! ./message/message */ 184));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var myInfo = function myInfo() {Promise.all(/*! require.ensure | pages/index/myInfo/myInfo */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/index/myInfo/myInfo")]).then((function () {return resolve(__webpack_require__(/*! ./myInfo/myInfo */ 191));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var release = function release() {Promise.all(/*! require.ensure | pages/index/release/release */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/index/release/release")]).then((function () {return resolve(__webpack_require__(/*! ./release/release */ 198));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   components: {
     home: home,
@@ -265,11 +265,9 @@ var _vuex = __webpack_require__(/*! vuex */ 42);function _interopRequireDefault(
     this.$refs.home.loadMore();
   },
   mounted: function mounted() {var _this = this;
-    this.$store.commit("favorites", "fffss");
     this.$nextTick(function () {
       _this.active = 0;
     });
-    this.getBanner();
   },
   methods: {
     onChange: function onChange(event) {
@@ -281,9 +279,6 @@ var _vuex = __webpack_require__(/*! vuex */ 42);function _interopRequireDefault(
           title: this.list[this.active].title });
 
       }
-    },
-    getBanner: function getBanner() {
-      this.$api.indexBanner();
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

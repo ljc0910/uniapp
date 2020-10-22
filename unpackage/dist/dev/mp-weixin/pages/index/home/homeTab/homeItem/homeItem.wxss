@@ -126,7 +126,7 @@
   display: -webkit-flex;
   display: flex;
 }
-.home-item .item-right .right-foot .foot-tags custom-tag {
+.home-item .item-right .right-foot .foot-tags uni-tag {
   margin-right: 16rpx;
 }
 

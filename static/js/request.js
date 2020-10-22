@@ -1,6 +1,7 @@
 // service.js文件
 
 import axios from "axios";
+import store from "../../store/index";
 let baseURL = "https://ccxq.chunchunyoupin.com/";
 const service = axios.create({
   withCredentials: true,
@@ -32,7 +33,7 @@ const loginConfirm = () => {
               openid: loginRes.code
             })
             .then(res => {
-              console.log(res);
+              store.commit("tokenInfo", res);
             });
           // this.$api
           //   .login({
@@ -62,7 +63,9 @@ service.interceptors.request.use(
     //     // 给请求头添加user-token
     //     config.headers["user-token"] = store.state.token;
     // }
-    console.log("请求拦截成功");
+    let tokenInfo = store.state.tokenInfo;
+    config.headers["Authorization"] =
+      tokenInfo.token_type + " " + tokenInfo.access_token;
     return config;
   },
   error => {
@@ -77,7 +80,7 @@ service.interceptors.response.use(
     if (res.data && res.data.status == 200) {
       return res.data.data;
     } else {
-      if (res.data.status === 700) {
+      if (res.data.status === 403) {
         // 未登录
         loginConfirm();
       } else {

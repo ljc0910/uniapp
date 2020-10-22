@@ -97,6 +97,27 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  if (!_vm._isMounted) {
+    _vm.e0 = function(param) {
+      _vm.userInfo.nickname = param.detail
+    }
+
+    _vm.e1 = function(param) {
+      _vm.userInfo.address = param.detail
+    }
+
+    _vm.e2 = function(param) {
+      _vm.userInfo.phone = param.detail
+    }
+
+    _vm.e3 = function(param) {
+      _vm.userInfo.weixin = param.detail
+    }
+
+    _vm.e4 = function(param) {
+      _vm.userInfo.description = param.detail
+    }
+  }
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -130,99 +151,266 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
-{
-  data: function data() {
-    return {
-      username: "",
-      value: "",
-      selectShow: false };
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
-  },
-  mounted: function mounted() {
-    this.getMyInfo();
-  },
-  methods: {
-    //获取个人信息
-    getMyInfo: function getMyInfo() {
-      this.$api.getMyInfo(1).then(function (res) {
-        console.log(res);
-      });
-    },
-    clickSelelctFn: function clickSelelctFn() {
-      this.selectShow = true;
-    } } };exports.default = _default;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _area = _interopRequireDefault(__webpack_require__(/*! ../../../../static/js/area */ 181));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = { data: function data() {return { userInfo: { avatar: "", nickname: "", address: "", phone: "", county_id: "", province_id: "", city_id: "", description: "" }, sheetShow: false, areajs: _area.default, username: "", uploadShow: true, fileList: [] };}, computed: { areaText: function areaText() {var countyId = Number(this.userInfo.county_id);var provinceId = Number(this.userInfo.province_id);var cityId = Number(this.userInfo.city_id);var _country = _area.default.county_list[countyId] || "";var _province = _area.default.province_list[provinceId] || "";var _city = _area.default.city_list[cityId] || "";return (_province + " " + _city + " " + _country).trim();} }, mounted: function mounted() {this.getMyInfo();}, methods: { //获取个人信息
+    getMyInfo: function getMyInfo() {var _this = this;this.$api.getMyInfo(0).then(function (res) {for (var key in _this.userInfo) {_this.userInfo[key] = res[key];}});}, clickSelelctFn: function clickSelelctFn() {this.sheetShow = true;}, // 选择地址
+    selectArea: function selectArea(param) {var areaInfo = param.target.values;this.userInfo.province_id = areaInfo[0].code;this.userInfo.city_id = areaInfo[1].code;this.userInfo.county_id = areaInfo[2].code;this.sheetShow = false;}, //取消选择
+    cancelArea: function cancelArea() {this.sheetShow = false;}, // 图片上传后
+    afterRead: function afterRead(event) {var file = event.detail.file;this.fileList.push({ url: file.path });}, // 保存操作
+    saveHandle: function saveHandle() {this.$api.updateMyInfo(this.userInfo).then(function (res) {//
+      });} } };exports.default = _default;
 
 /***/ }),
 

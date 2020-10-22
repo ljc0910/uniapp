@@ -50,10 +50,6 @@
     "van-uploader": "/wxcomponents/vant/dist/uploader/index",
     "van-nav-bar": "/wxcomponents/vant/dist/nav-bar/index",
     "van-dialog": "/wxcomponents/vant/dist/dialog/index",
-    "van-toast": "/wxcomponents/vant/dist/toast/index",
-    "custom-tag": "/components/custom-tag",
-    "custom-tag2": "/components/custom-tag2",
-    "custom-info": "/components/custom-info",
-    "a-load-more": "/components/a_loadMore"
+    "van-toast": "/wxcomponents/vant/dist/toast/index"
   }
 }

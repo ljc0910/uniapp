@@ -23,9 +23,9 @@
                 slot="icon"
                 :class="{
                   radioItem: true,
-                  isOnRadio: item.value === filter
+                  isOnRadio: item.value === filter.id
                 }"
-                >{{ filter }}</view
+                >{{ filter.name }}</view
               >
             </van-radio>
           </van-radio-group>
@@ -68,7 +68,6 @@ export default {
     getRadioList() {
       this.$api.indexFilter().then(res => {
         this.filterList = res;
-        this.filterList[0].data = ["test", "test2", 3];
       });
     },
     // 获取内容列表
@@ -78,7 +77,7 @@ export default {
       });
     },
     onChange(param, item) {
-      this.$set(item, "value", param.detail);
+      this.$set(item, "value", param.detail.id);
     },
     // 取消
     cancelHandle() {

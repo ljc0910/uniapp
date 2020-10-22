@@ -28,13 +28,13 @@
         <homeItem v-for="i in 15" :key="i"></homeItem>
       </van-tab>
       <van-tab title="标签 2">
-        <aLoadMore
+        <uni-load-more
           mode=""
           color=""
           textColor=""
           textSize=""
           padding=""
-        ></aLoadMore>
+        ></uni-load-more>
       </van-tab>
       <van-tab title="标签 3">内容 3</van-tab>
       <van-tab title="标签 4">内容 4</van-tab>

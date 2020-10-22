@@ -25,6 +25,7 @@
 </template>
 <script>
 export default {
+  name: "uni-select",
   props: {
     columns: {
       default: []

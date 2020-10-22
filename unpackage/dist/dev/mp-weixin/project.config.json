@@ -37,6 +37,13 @@
       "list": [
         {
           "id": -1,
+          "name": "pages/index/myInfo/editMyInfo/editMyInfo",
+          "pathName": "pages/index/myInfo/editMyInfo/editMyInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
           "name": "pages/index/myInfo/myRelease/adopter/adopterDetail/adopterDetail",
           "pathName": "pages/index/myInfo/myRelease/adopter/adopterDetail/adopterDetail",
           "scene": null

@@ -93,7 +93,7 @@
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
 }
-.homeDetail .cont-info .cont-left .tags custom-tag {
+.homeDetail .cont-info .cont-left .tags uni-tag {
   margin-right: 16rpx;
   margin-bottom: 4rpx;
 }

@@ -70,7 +70,7 @@
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
 }
-.sharePage .share-cont .cont-item .tags custom-tag.data-v-3f1752d0 {
+.sharePage .share-cont .cont-item .tags uni-tag.data-v-3f1752d0 {
   margin-right: 16rpx;
   margin-bottom: 4rpx;
 }

@@ -16,11 +16,11 @@
             />
           </view>
           <view class="form-item">
-            <custom-select
+            <uni-select
               paclholder="请选择分类"
               :columns="columns"
               @selectCb="setSelectVal"
-            ></custom-select>
+            ></uni-select>
           </view>
         </view>
       </view>
@@ -94,7 +94,7 @@
   </view>
 </template>
 <script>
-import customSelect from "../../../../components/custom-select";
+import customSelect from "../../../../components/uni-select";
 export default {
   components: {
     customSelect

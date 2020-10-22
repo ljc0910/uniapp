@@ -128,11 +128,9 @@ export default {
     this.$refs.home.loadMore();
   },
   mounted() {
-    this.$store.commit("favorites", "fffss");
     this.$nextTick(() => {
       this.active = 0;
     });
-    this.getBanner();
   },
   methods: {
     onChange(event) {
@@ -144,9 +142,6 @@ export default {
           title: this.list[this.active].title
         });
       }
-    },
-    getBanner() {
-      this.$api.indexBanner();
     }
   }
 };

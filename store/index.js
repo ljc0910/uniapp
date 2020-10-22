@@ -3,8 +3,7 @@ import Vuex from "vuex";
 import createPersistedState from "vuex-persistedstate";
 Vue.use(Vuex);
 let initData = {
-  username: "",
-  favorites: ""
+  tokenInfo: {}
 };
 let state = {};
 let mutations = {};

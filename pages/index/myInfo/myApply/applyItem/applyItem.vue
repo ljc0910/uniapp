@@ -10,8 +10,8 @@
               <view class="text">发布人：aplll</view>
             </view>
             <view class="right-foot">
-              <custom-tag2 color="#00AF66" background="rgba(0, 175, 102, 0.15)"
-                >12345</custom-tag2
+              <uni-tag2 color="#00AF66" background="rgba(0, 175, 102, 0.15)"
+                >12345</uni-tag2
               >
             </view>
           </view>

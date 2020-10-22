@@ -92,7 +92,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
-var components
+var components = {
+  uniSelect: function() {
+    return __webpack_require__.e(/*! import() | components/uni-select */ "components/uni-select").then(__webpack_require__.bind(null, /*! @/components/uni-select.vue */ 215))
+  }
+}
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -130,7 +134,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var customSelect = function customSelect() {__webpack_require__.e(/*! require.ensure | components/custom-select */ "components/custom-select").then((function () {return resolve(__webpack_require__(/*! ../../../../components/custom-select */ 234));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var customSelect = function customSelect() {__webpack_require__.e(/*! require.ensure | components/uni-select */ "components/uni-select").then((function () {return resolve(__webpack_require__(/*! ../../../../components/uni-select */ 215));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

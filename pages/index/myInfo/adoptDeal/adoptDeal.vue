@@ -1,6 +1,6 @@
 <template>
   <view class="adoptDeal">
-    <custom-info></custom-info>
+    <uni-info></uni-info>
   </view>
 </template>
 <style lang="scss">

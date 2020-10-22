@@ -21,8 +21,8 @@
       </view>
       <view class="right-foot">
         <view class="foot-tags">
-          <custom-tag>已驱虫</custom-tag>
-          <custom-tag background="#FF791F">已绝育</custom-tag>
+          <uni-tag>已驱虫</uni-tag>
+          <uni-tag background="#FF791F">已绝育</uni-tag>
         </view>
       </view>
     </view>
@@ -30,6 +30,7 @@
 </template>
 <script>
 export default {
+  name: "uni-info",
   data() {
     return {};
   },
@@ -115,7 +116,7 @@ export default {
       justify-content: space-between;
       .foot-tags {
         display: flex;
-        custom-tag {
+        uni-tag {
           margin-right: 16rpx;
         }
       }

@@ -46,6 +46,7 @@
   height: 110rpx;
   -webkit-border-radius: 50%;
           border-radius: 50%;
+  background: #eee;
 }
 .editMyInfo .textarea-title {
   font-size: 32rpx;

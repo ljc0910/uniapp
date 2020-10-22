@@ -1,11 +1,12 @@
 <template>
   <view class="adopterDetail">
     <van-nav-bar
-      title="帮ta找家"
+      title="申请人详情"
       left-arrow
       @click-left="backFn"
       custom-class="custom-nav-bar"
     />
+    <view class="top-bg"></view>
   </view>
 </template>
 <script>
@@ -24,5 +25,15 @@ export default {
 .adopterDetail {
   background: #ccc;
   height: 100vh;
+  position: relative;
+  .top-bg {
+    background: orange;
+    border-radius: 50%;
+    height: 2000rpx;
+    width: 2000rpx;
+    position: absolute;
+    top: -1500rpx;
+    left: -500px;
+  }
 }
 </style>

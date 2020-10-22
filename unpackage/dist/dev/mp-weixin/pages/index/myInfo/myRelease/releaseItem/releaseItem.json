@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "uni-tag2": "/components/uni-tag2"
+  },
   "component": true
 }

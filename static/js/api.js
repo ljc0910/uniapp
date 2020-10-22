@@ -48,6 +48,14 @@ export default {
       method: "get"
     });
   },
+  // 更新个人信息
+  updateMyInfo: data => {
+    return request({
+      data,
+      url: "user/update",
+      method: "post"
+    });
+  },
   // 关于我们
   aboutUs: data => {
     return request({

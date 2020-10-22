@@ -12,7 +12,7 @@
     >
       <van-tab title="标签 1">
         <view class="custom-tab-cont">
-          <custom-info v-for="i in 5"></custom-info>
+          <uni-info v-for="i in 5"></uni-info>
         </view>
       </van-tab>
       <van-tab title="标签 2">内容 2</van-tab>

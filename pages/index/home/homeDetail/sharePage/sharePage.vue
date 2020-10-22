@@ -25,9 +25,9 @@
         <view class="cont-item">
           <view class="label text">健康</view>
           <view class="tags">
-            <custom-tag>已驱虫</custom-tag>
-            <custom-tag background="#FF791F">大事发生发发发</custom-tag>
-            <custom-tag background="#56BFA3">已免疫</custom-tag>
+            <uni-tag>已驱虫</uni-tag>
+            <uni-tag background="#FF791F">大事发生发发发</uni-tag>
+            <uni-tag background="#56BFA3">已免疫</uni-tag>
           </view>
         </view>
       </view>
@@ -90,7 +90,7 @@ export default {
         display: flex;
         margin-top: 6rpx;
         flex-wrap: wrap;
-        custom-tag {
+        uni-tag {
           margin-right: 16rpx;
           margin-bottom: 4rpx;
         }

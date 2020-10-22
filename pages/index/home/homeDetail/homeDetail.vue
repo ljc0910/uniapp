@@ -38,9 +38,9 @@
           </view>
         </view>
         <view class="tags">
-          <custom-tag>已驱虫</custom-tag>
-          <custom-tag background="#FF791F">已绝育</custom-tag>
-          <custom-tag background="#56BFA3">已免疫</custom-tag>
+          <uni-tag>已驱虫</uni-tag>
+          <uni-tag background="#FF791F">已绝育</uni-tag>
+          <uni-tag background="#56BFA3">已免疫</uni-tag>
         </view>
       </view>
       <view class="cont-right">
@@ -190,7 +190,7 @@ export default {
         display: flex;
         margin-top: 18rpx;
         flex-wrap: wrap;
-        custom-tag {
+        uni-tag {
           margin-right: 16rpx;
           margin-bottom: 4rpx;
         }

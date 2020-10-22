@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "领养协议",
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-info": "/components/uni-info"
+  }
 }
